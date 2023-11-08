@@ -1,6 +1,14 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
-  return <main></main>;
+"use client";
+import NetflixLottie from "@/components/Lottie/NetflixLottie";
+import styled from "styled-components";
+export default function App() {
+  return (
+    <LandingWrapper>
+      <NetflixLottie></NetflixLottie>
+    </LandingWrapper>
+  );
 }
+const LandingWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`;
