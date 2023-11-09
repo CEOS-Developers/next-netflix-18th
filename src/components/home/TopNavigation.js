@@ -5,27 +5,32 @@ function TopNavigation() {
   return (
     <TopNavigationWrapper>
       <NetflixLogo />
-      <TopMenuItem></TopMenuItem>
-      <TopMenuItem></TopMenuItem>
-      <TopMenuItem></TopMenuItem>
+      <TopMenuItem>TV Shows</TopMenuItem>
+      <TopMenuItem>Movies</TopMenuItem>
+      <TopMenuItem>My List</TopMenuItem>
     </TopNavigationWrapper>
   );
 }
 
 const TopNavigationWrapper = styled.ul`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25.32px;
+  padding: 24px 0px;
+  position: absolute;
+  top: 0;
 `;
 
 const TopMenuItem = styled.li`
   color: #fff;
   text-align: center;
+  cursor: pointer;
   font-size: 17.197px;
   font-style: normal;
   font-weight: 400;
-  line-height: 30.447px; /* 177.049% */
+  line-height: 30.447px;
   letter-spacing: 0.762px;
 `;
 
