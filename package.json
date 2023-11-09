@@ -22,5 +22,8 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0"
+  }
 }
