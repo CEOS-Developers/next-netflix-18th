@@ -5,7 +5,7 @@ import PlayLogo from "public/assets/images/icon/play.svg";
 import InfoLogo from "public/assets/images/icon/info.svg";
 function MainContent() {
   return (
-    <>
+    <MainSection>
       <RandomImageBox>
         <ImageCaption>#2 in Nigeria Today</ImageCaption>
       </RandomImageBox>
@@ -23,9 +23,10 @@ function MainContent() {
           <InfoText>Info</InfoText>
         </InfoButton>
       </ButtonWrapper>
-    </>
+    </MainSection>
   );
 }
+const MainSection = styled.section``;
 
 const RandomImageBox = styled.div`
   background: linear-gradient(

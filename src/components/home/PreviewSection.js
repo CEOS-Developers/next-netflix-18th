@@ -11,6 +11,11 @@ function PreviewSection() {
           <PreviewItem />
           <PreviewItem />
           <PreviewItem />
+          <PreviewItem />
+          <PreviewItem />
+          <PreviewItem />
+          <PreviewItem />
+          <PreviewItem />
         </PreviewList>
       </PreviewListContainer>
     </PreviewSectionWrapper>
@@ -19,6 +24,7 @@ function PreviewSection() {
 
 const PreviewSectionWrapper = styled.section`
   margin-top: 43px;
+  margin-bottom: 6px;
   display: flex;
   flex-direction: column;
   gap: 23px;
@@ -35,20 +41,22 @@ const PrevewTitle = styled.div`
   letter-spacing: -0.073px;
 `;
 const PreviewListContainer = styled.div`
+  margin-left: 12px;
   overflow: scroll;
-  width: 100%;
 `;
 
 const PreviewList = styled.div`
   display: flex;
   gap: 7px;
+  width: 1050px;
+  overflow: scroll;
 `;
 
 const PreviewItem = styled.div`
   width: 102px;
   height: 102px;
   border-radius: 50%;
-  backgrund-color: gray;
+  background-color: gray;
 `;
 
 export default PreviewSection;
