@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import request from "@/api/request";
+import axios from "@/api/axios";
 function PreviewSection() {
+  const [previewSrc, setPreviewSrc] = useState([]);
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(request.fetchUpcoming);
+      const paths = res.data.results.map((value) => value.backdrop_path);
+      setPreviewSrc(paths);
+      console.log(previewSrc);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <PreviewSectionWrapper>
       <PrevewTitle>Previews</PrevewTitle>
       <PreviewListContainer>
         <PreviewList>
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
-          <PreviewItem />
+          {previewSrc.slice(0, 10).map((src) => {
+            return (
+              <>
+                <PreviewItem
+                  src={"https://image.tmdb.org/t/p/original" + src}
+                />
+              </>
+            );
+          })}
         </PreviewList>
       </PreviewListContainer>
     </PreviewSectionWrapper>
@@ -55,8 +70,8 @@ const PreviewList = styled.div`
 const PreviewItem = styled.img`
   width: 102px;
   height: 102px;
-  border-radius: 50%;
-  background-color: gray;
+  border-radius: 100%;
+  object-fit: cover;
 `;
 
 export default PreviewSection;
