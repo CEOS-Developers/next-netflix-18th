@@ -12,23 +12,23 @@ function BottomNavigation() {
     <>
       <BottomNavigationWrapper>
         <MenuList>
-          <MenuItem padding={"8px"}>
+          <MenuItem $padding={"8px"}>
             <HomeLogo stroke={"#FFF"} />
-            <MenuText color={"#FFF"}>Home</MenuText>
+            <MenuText $color={"#FFF"}>Home</MenuText>
           </MenuItem>
-          <MenuItem padding={"8px"}>
-            <SearchLogo stroke={"#8C8787"} />
+          <MenuItem $padding={"8px"}>
+            <SearchLogo $stroke={"#8C8787"} />
             <MenuText>Search</MenuText>
           </MenuItem>
-          <MenuItem padding={"10px"}>
+          <MenuItem $padding={"10px"}>
             <CommingLogo fill={"#8C8787"} />
             <MenuText>Coming Soon</MenuText>
           </MenuItem>
-          <MenuItem padding={"8px"}>
+          <MenuItem $padding={"8px"}>
             <DownloadLogo fill={"#8C8787"} />
             <MenuText>Downloads</MenuText>
           </MenuItem>
-          <MenuItem padding={"11px"}>
+          <MenuItem $padding={"11px"}>
             <MoreLogo fill={"#8C8787"} />
             <MenuText>More</MenuText>
           </MenuItem>
@@ -57,7 +57,7 @@ const MenuItem = styled.div`
   width: 50px;
   display: flex;
   justify-content: center;
-  padding-top: ${(props) => props.padding};
+  padding-top: ${(props) => props.$padding};
   position: relative;
   cursor: pointer;
 `;
@@ -71,7 +71,7 @@ const MenuText = styled.div`
   font-style: normal;
   font-weight: 500;
   color: #8c8787;
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 `;
 
 export default BottomNavigation;
