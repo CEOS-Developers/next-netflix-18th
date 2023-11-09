@@ -52,7 +52,7 @@ const PreviewList = styled.div`
   overflow: scroll;
 `;
 
-const PreviewItem = styled.div`
+const PreviewItem = styled.img`
   width: 102px;
   height: 102px;
   border-radius: 50%;

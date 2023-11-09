@@ -51,7 +51,7 @@ const RecommendList = styled.div`
   overflow: scroll;
 `;
 
-const RecommendItem = styled.div`
+const RecommendItem = styled.img`
   width: 103px;
   height: 161px;
   border-radius: 2px;
