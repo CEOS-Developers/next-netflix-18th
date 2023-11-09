@@ -4,9 +4,13 @@ import MainContent from "@/components/home/MainContent";
 import PreviewSection from "@/components/home/PreviewSection";
 import RecommendSection from "@/components/home/RecommendSection";
 import TopNavigation from "@/components/home/TopNavigation";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const Home = () => {
+  useEffect(() => {
+    console.log(1);
+  }, []);
   return (
     <>
       <ScrollContainer>

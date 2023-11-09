@@ -55,7 +55,7 @@ const RecommendItem = styled.div`
   width: 103px;
   height: 161px;
   border-radius: 2px;
-  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+  
 `;
 
 export default RecommendSection;

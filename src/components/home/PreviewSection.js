@@ -31,7 +31,7 @@ const PreviewSectionWrapper = styled.section`
 `;
 
 const PrevewTitle = styled.div`
-  padding-left: 20px;
+  padding-left: 16px;
   color: #fff;
   font-family: SF Pro Display;
   font-size: 26.748px;
