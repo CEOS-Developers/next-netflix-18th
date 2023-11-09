@@ -4,21 +4,9 @@ import MainContent from "@/components/home/MainContent";
 import PreviewSection from "@/components/home/PreviewSection";
 import RecommendSection from "@/components/home/RecommendSection";
 import TopNavigation from "@/components/home/TopNavigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import axios from "@/api/axios";
-import request from "@/api/request";
 const Home = () => {
-  const fetchData = async () => {
-    try {
-      const res = axios.get(request.fetchMovieNowPlaying);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <>
       <ScrollContainer>

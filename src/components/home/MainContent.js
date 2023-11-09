@@ -3,10 +3,34 @@ import styled from "styled-components";
 import MyListLogo from "public/assets/images/icon/my-list.svg";
 import PlayLogo from "public/assets/images/icon/play.svg";
 import InfoLogo from "public/assets/images/icon/info.svg";
+import axios from "@/api/axios";
+import request from "@/api/request";
+import { useState } from "react";
 function MainContent() {
+  const [mainImgSrc, setMainImgSrc] = useState();
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(request.fetchMovieNowPlaying);
+      setMainImgSrc(
+        res.data.results[Math.floor(Math.random() * res.data.results.length)]
+          .backdrop_path
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <MainSection>
       <RandomImageBox>
+        {mainImgSrc ? (
+          <RandomImg src={`https://image.tmdb.org/t/p/original${mainImgSrc}`} />
+        ) : (
+          <EmptyImage />
+        )}
+
         <ImageCaption>#2 in Nigeria Today</ImageCaption>
       </RandomImageBox>
       <ButtonWrapper>
@@ -29,16 +53,29 @@ function MainContent() {
 const MainSection = styled.section``;
 
 const RandomImageBox = styled.div`
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0) 87.26%,
-      #000 100%
-    ),
-    url(<path-to-image>), lightgray 50% / cover no-repeat;
-
-  height: 415px;
   position: relative;
+  height: 415px;
+  width: 375px;
+  background-color: black;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0) 87.26%,
+    #000 100%
+  );
+`;
+
+const EmptyImage = styled.div`
+  width: 415px;
+  height: 375px;
+`;
+
+const RandomImg = styled.img`
+  height: 415px;
+  width: 375px;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
 `;
 
 const ImageCaption = styled.div`
