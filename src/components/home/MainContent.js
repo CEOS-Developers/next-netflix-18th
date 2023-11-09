@@ -94,6 +94,9 @@ const PlayButton = styled.div`
   align-items: center;
   gap: 15px;
   cursor: pointer;
+  &:hover {
+    background: rgba(196, 196, 196, 0.8);
+  }
 `;
 
 const PlayText = styled.div`
