@@ -2,11 +2,11 @@
 import BottomNavigation from "@/components/Common/BottomNavigation";
 import MainContent from "@/components/home/MainContent";
 import PreviewSection from "@/components/home/PreviewSection";
-import PopularSection from "@/components/home/PopularSection";
 import TopNavigation from "@/components/home/TopNavigation";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { fetchPopularData } from "@/api/fetchData";
+import RecommendSection from "@/components/home/RecommendSection";
 const Home = () => {
   const [popularSrc, setPopularSrc] = useState([]);
   useEffect(() => {
@@ -22,7 +22,10 @@ const Home = () => {
         <TopNavigation />
         <MainContent />
         <PreviewSection />
-        <PopularSection title={"Popular on Netflix"} popularSrc={popularSrc} />
+        <RecommendSection
+          title={"Popular on Netflix"}
+          recommendSrc={popularSrc}
+        />
         {/* <RecommendSection title={"Continue watching for Inyoung"} />
         <RecommendSection title={"Continue watching for Inyoung"} /> */}
         <ScrollMarginSpace />
