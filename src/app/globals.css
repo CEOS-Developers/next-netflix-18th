@@ -9,6 +9,9 @@ body {
   margin: 0 auto;
   font-family: "SF";
 }
+::-webkit-scrollbar {
+  display: none;
+}
 ul,
 li,
 input {
