@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function RecommendSection({ title, recommendSrc }) {
+export function RecommendSection({ title, recommendSrc }) {
   return (
     <RecommendSectionWrapper>
       <RecommendTitle>{title}</RecommendTitle>
@@ -56,5 +56,3 @@ const RecommendItem = styled.img`
   border-radius: 2px;
   object-fit: cover;
 `;
-
-export default RecommendSection;

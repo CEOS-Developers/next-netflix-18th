@@ -1,15 +1,24 @@
 "use client";
 import BottomNavigation from "@/components/Common/BottomNavigation";
-import MainContent from "@/components/home/MainContent";
-import PreviewSection from "@/components/home/PreviewSection";
-import TopNavigation from "@/components/home/TopNavigation";
+import {
+  MainContent,
+  PreviewSection,
+  TopNavigation,
+  RecommendSection,
+} from "@/components/home";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { fetchPopularData, fetchTopRatedData } from "@/api/fetchData";
-import RecommendSection from "@/components/home/RecommendSection";
+import {
+  fetchActionData,
+  fetchPopularData,
+  fetchTopRatedData,
+} from "@/api/fetchData";
+
 const Home = () => {
+  //여기 useState랑 Effect 사용하지 않아도 될듯함
   const [popularSrc, setPopularSrc] = useState([]);
   const [topRatedSrc, setTopRatedSrc] = useState([]);
+  const [actionSrc, setActionSrc] = useState([]);
   useEffect(() => {
     const fetchPopularSrc = async () => {
       const paths = await fetchPopularData();
@@ -19,8 +28,13 @@ const Home = () => {
       const paths = await fetchTopRatedData();
       setTopRatedSrc(paths);
     };
+    const fetchActionSrc = async () => {
+      const paths = await fetchActionData();
+      setActionSrc(paths);
+    };
     fetchPopularSrc();
     fetchTopRatedSrc();
+    fetchActionSrc();
   }, []);
   return (
     <>
@@ -33,7 +47,7 @@ const Home = () => {
           recommendSrc={popularSrc}
         />
         <RecommendSection title={"Trending Now"} recommendSrc={topRatedSrc} />
-
+        <RecommendSection title={"Action Movies"} recommendSrc={actionSrc} />
         <ScrollMarginSpace />
       </ScrollContainer>
       <BottomNavigation />

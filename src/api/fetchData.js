@@ -22,3 +22,14 @@ export const fetchTopRatedData = async () => {
     return [];
   }
 };
+
+export const fetchActionData = async () => {
+  try {
+    const res = await axios.get(request.fetchActionMovies);
+    const paths = res.data.results.map((value) => value.backdrop_path);
+    return paths;
+  } catch (err) {
+    console.log(err);
+    return [];
+  }
+};

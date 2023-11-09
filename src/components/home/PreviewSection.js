@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import request from "@/api/request";
 import axios from "@/api/axios";
-function PreviewSection() {
+export function PreviewSection() {
   const [previewSrc, setPreviewSrc] = useState([]);
   const fetchData = async () => {
     try {
@@ -72,5 +72,3 @@ const PreviewItem = styled.img`
   border-radius: 100%;
   object-fit: cover;
 `;
-
-export default PreviewSection;

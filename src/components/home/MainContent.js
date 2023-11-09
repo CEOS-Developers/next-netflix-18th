@@ -6,7 +6,7 @@ import InfoLogo from "public/assets/images/icon/info.svg";
 import axios from "@/api/axios";
 import request from "@/api/request";
 import { useState } from "react";
-function MainContent() {
+export function MainContent() {
   const [mainImgSrc, setMainImgSrc] = useState();
   const fetchData = async () => {
     try {
@@ -145,5 +145,3 @@ const PlayText = styled.div`
   line-height: 30px; /* 146.61% */
   letter-spacing: -0.061px;
 `;
-
-export default MainContent;

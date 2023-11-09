@@ -1,7 +1,7 @@
 import React from "react";
 import NetflixLogo from "public/assets/images/icon/netflix.svg";
 import styled from "styled-components";
-function TopNavigation() {
+export function TopNavigation() {
   return (
     <TopNavigationWrapper>
       <NetflixLogo />
@@ -34,5 +34,3 @@ const TopMenuItem = styled.li`
   line-height: 30.447px;
   letter-spacing: 0.762px;
 `;
-
-export default TopNavigation;
