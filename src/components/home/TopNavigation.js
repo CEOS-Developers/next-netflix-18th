@@ -21,6 +21,7 @@ const TopNavigationWrapper = styled.ul`
   padding: 24px 0px;
   position: absolute;
   top: 0;
+  z-index: 999;
 `;
 
 const TopMenuItem = styled.li`
