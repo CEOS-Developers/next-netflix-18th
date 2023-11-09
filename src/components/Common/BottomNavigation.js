@@ -17,7 +17,7 @@ function BottomNavigation() {
             <MenuText $color={"#FFF"}>Home</MenuText>
           </MenuItem>
           <MenuItem $padding={"8px"}>
-            <SearchLogo $stroke={"#8C8787"} />
+            <SearchLogo stroke={"#8C8787"} />
             <MenuText>Search</MenuText>
           </MenuItem>
           <MenuItem $padding={"10px"}>

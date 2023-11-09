@@ -6,10 +6,18 @@ import RecommendSection from "@/components/home/RecommendSection";
 import TopNavigation from "@/components/home/TopNavigation";
 import { useEffect } from "react";
 import styled from "styled-components";
-
+import axios from "@/api/axios";
+import request from "@/api/request";
 const Home = () => {
+  const fetchData = async () => {
+    try {
+      const res = axios.get(request.fetchMovieNowPlaying);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
-    console.log(1);
+    fetchData();
   }, []);
   return (
     <>
