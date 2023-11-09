@@ -13,23 +13,23 @@ function BottomNavigation() {
       <BottomNavigationWrapper>
         <MenuList>
           <MenuItem padding={"8px"}>
-            <HomeLogo />
+            <HomeLogo stroke={"#FFF"} />
             <MenuText color={"#FFF"}>Home</MenuText>
           </MenuItem>
           <MenuItem padding={"8px"}>
-            <SearchLogo />
+            <SearchLogo stroke={"#8C8787"} />
             <MenuText>Search</MenuText>
           </MenuItem>
           <MenuItem padding={"10px"}>
-            <CommingLogo />
+            <CommingLogo fill={"#8C8787"} />
             <MenuText>Coming Soon</MenuText>
           </MenuItem>
           <MenuItem padding={"8px"}>
-            <DownloadLogo />
+            <DownloadLogo fill={"#8C8787"} />
             <MenuText>Downloads</MenuText>
           </MenuItem>
           <MenuItem padding={"11px"}>
-            <MoreLogo />
+            <MoreLogo fill={"#8C8787"} />
             <MenuText>More</MenuText>
           </MenuItem>
         </MenuList>
