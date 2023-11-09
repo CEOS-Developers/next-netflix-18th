@@ -5,16 +5,22 @@ import PreviewSection from "@/components/home/PreviewSection";
 import TopNavigation from "@/components/home/TopNavigation";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { fetchPopularData } from "@/api/fetchData";
+import { fetchPopularData, fetchTopRatedData } from "@/api/fetchData";
 import RecommendSection from "@/components/home/RecommendSection";
 const Home = () => {
   const [popularSrc, setPopularSrc] = useState([]);
+  const [topRatedSrc, setTopRatedSrc] = useState([]);
   useEffect(() => {
-    const fetchSrc = async () => {
+    const fetchPopularSrc = async () => {
       const paths = await fetchPopularData();
       setPopularSrc(paths);
     };
-    fetchSrc();
+    const fetchTopRatedSrc = async () => {
+      const paths = await fetchTopRatedData();
+      setTopRatedSrc(paths);
+    };
+    fetchPopularSrc();
+    fetchTopRatedSrc();
   }, []);
   return (
     <>
@@ -26,8 +32,8 @@ const Home = () => {
           title={"Popular on Netflix"}
           recommendSrc={popularSrc}
         />
-        {/* <RecommendSection title={"Continue watching for Inyoung"} />
-        <RecommendSection title={"Continue watching for Inyoung"} /> */}
+        <RecommendSection title={"Trending Now"} recommendSrc={topRatedSrc} />
+
         <ScrollMarginSpace />
       </ScrollContainer>
       <BottomNavigation />
