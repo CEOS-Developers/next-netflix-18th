@@ -9,7 +9,6 @@ function PreviewSection() {
       const res = await axios.get(request.fetchUpcoming);
       const paths = res.data.results.map((value) => value.backdrop_path);
       setPreviewSrc(paths);
-      console.log(previewSrc);
     } catch (err) {
       console.log(err);
     }
