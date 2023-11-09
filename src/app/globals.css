@@ -10,7 +10,24 @@ html {
 body {
   height: 100%;
   margin: 0;
+  font-family: "SF";
 }
 .mainContainer {
   width: 375px;
+}
+/* 피그마 디자인 참조하여 사용할 폰트 assets/fonts에서 Import */
+@font-face {
+  font-family: "SF";
+  font-weight: 400;
+  src: url("/assets/fonts/SFPRODISPLAYMEDIUM.OTF") format ("opentype");
+}
+@font-face {
+  font-family: "SF";
+  font-weight: 500;
+  src: url("/assets/fonts/SFPRODISPLAYREGULAR.OTF") format ("opentype");
+}
+@font-face {
+  font-family: "SF";
+  font-weight: 700;
+  src: url("/assets/fonts/SFPRODISPLAYBOLD.OTF") format ("opentype");
 }
