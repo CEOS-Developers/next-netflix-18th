@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MyListLogo from "public/assets/images/icon/my-list.svg";
 import PlayLogo from "public/assets/images/icon/play.svg";
 import InfoLogo from "public/assets/images/icon/info.svg";
+import Top10Logo from "public/assets/images/icon/top-10.svg";
 import { useFetchData } from "@/hooks/useFetchData";
 export function MainContent() {
   const mainImageUrlList = useFetchData("movieNowPlaying");
@@ -19,7 +20,10 @@ export function MainContent() {
           <EmptyImage />
         )}
 
-        <ImageCaption>#2 in Nigeria Today</ImageCaption>
+        <ImageCaption>
+          <Top10Logo />
+          <ImageCaptionText>#2 in Nigeria Today</ImageCaptionText>
+        </ImageCaption>
       </RandomImageBox>
       <ButtonWrapper>
         <MyListButton>
@@ -70,12 +74,16 @@ const ImageCaption = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 5px;
   width: 100%;
+  height: 20px;
   bottom: 0px;
+`;
+const ImageCaptionText = styled.div`
   color: #fff;
   font-size: 13.723px;
   font-weight: 700;
-  line-height: 20px; /* 145.741% */
   letter-spacing: -0.041px;
 `;
 
