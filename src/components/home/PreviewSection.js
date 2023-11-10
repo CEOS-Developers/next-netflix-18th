@@ -4,7 +4,7 @@ import request from "@/api/request";
 import axios from "@/api/axios";
 import { useFetchUpcomingData } from "@/hooks/useFetchData";
 export function PreviewSection() {
-  const previewImageUrl = useFetchUpcomingData("fetchMovieNowPlaying");
+  const previewImageUrl = useFetchUpcomingData("fetchUpcoming");
   return (
     <PreviewSectionWrapper>
       <PrevewTitle>Previews</PrevewTitle>
