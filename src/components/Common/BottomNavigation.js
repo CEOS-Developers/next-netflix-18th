@@ -41,6 +41,7 @@ function BottomNavigation() {
 
 const BottomNavigationWrapper = styled.div`
   position: fixed;
+  height: 79px;
   bottom: 0px;
 `;
 
@@ -64,7 +65,7 @@ const MenuItem = styled.div`
 
 const MenuText = styled.div`
   position: absolute;
-  bottom: 0px;
+  bottom: 6px;
   width: 55px;
   text-align: center;
   font-size: 8.2px;
