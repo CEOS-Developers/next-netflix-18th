@@ -1,5 +1,5 @@
 import axios from "axios";
-
+// axios 인스턴스 생성
 const instance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   params: { language: "ko-KR" },

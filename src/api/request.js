@@ -1,3 +1,4 @@
+// api 요청 경로 모음
 const request = {
   movieNowPlaying: "movie/now_playing",
   movieUpcoming: "movie/upcoming",
