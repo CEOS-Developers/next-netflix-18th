@@ -64,7 +64,7 @@ const MenuItem = styled.div`
 
 const MenuText = styled.div`
   position: absolute;
-  bottom: 6px;
+  bottom: 0px;
   width: 55px;
   text-align: center;
   font-size: 8.2px;
