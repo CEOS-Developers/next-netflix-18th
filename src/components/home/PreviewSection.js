@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import request from "@/api/request";
-import axios from "@/api/axios";
 import { useFetchData } from "@/hooks/useFetchData";
 export function PreviewSection() {
   const previewImageUrlList = useFetchData("movieUpcoming");
@@ -60,4 +58,9 @@ const PreviewItem = styled.img`
   height: 102px;
   border-radius: 100%;
   object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    opacity: 0.5;
+  }
 `;

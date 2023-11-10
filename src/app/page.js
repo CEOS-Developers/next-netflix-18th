@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function App() {
   return (
     <LandingWrapper>
-      <NetflixLottie/>
+      <NetflixLottie />
     </LandingWrapper>
   );
 }

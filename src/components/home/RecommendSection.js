@@ -57,4 +57,9 @@ const RecommendItem = styled.img`
   height: 161px;
   border-radius: 2px;
   object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
