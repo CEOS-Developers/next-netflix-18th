@@ -7,7 +7,6 @@ import {
   RecommendSection,
 } from "@/components/home";
 import styled from "styled-components";
-
 const Home = () => {
   return (
     <>
@@ -15,9 +14,9 @@ const Home = () => {
         <TopNavigation />
         <MainContent />
         <PreviewSection />
-        <RecommendSection title={"Popular on Netflix"} />
-        <RecommendSection title={"Trending Now"} />
-        <RecommendSection title={"Action Movies"} />
+        <RecommendSection title={"Popular on Netflix"} type="moviePopular" />
+        <RecommendSection title={"Trending Now"} type="movieTopRated" />
+        <RecommendSection title={"Action Movies"} type="movieAction" />
         <ScrollMarginSpace />
       </ScrollContainer>
       <BottomNavigation />

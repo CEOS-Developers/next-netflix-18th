@@ -1,8 +1,8 @@
-import { useFetchUpcomingData } from "@/hooks/useFetchData";
+import { useFetchData } from "@/hooks/useFetchData";
 import styled from "styled-components";
 
 export function RecommendSection({ title, type }) {
-  const recommendImageUrlList = useFetchUpcomingData(type);
+  const recommendImageUrlList = useFetchData(type);
   return (
     <RecommendSectionWrapper>
       <RecommendTitle>{title}</RecommendTitle>

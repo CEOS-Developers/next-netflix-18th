@@ -1,10 +1,7 @@
 import axios from "@/api/axios";
 import request from "@/api/request";
 import { useState, useEffect } from "react";
-
-export const useFetchPopularData = () => {};
-
-export const useFetchUpcomingData = (type) => {
+export const useFetchData = (type) => {
   const [previewSrc, setPreviewSrc] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

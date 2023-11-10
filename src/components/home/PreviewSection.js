@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import request from "@/api/request";
 import axios from "@/api/axios";
-import { useFetchUpcomingData } from "@/hooks/useFetchData";
+import { useFetchData } from "@/hooks/useFetchData";
 export function PreviewSection() {
-  const previewImageUrl = useFetchUpcomingData("fetchUpcoming");
+  const previewImageUrlList = useFetchData("movieUpcoming");
   return (
     <PreviewSectionWrapper>
       <PrevewTitle>Previews</PrevewTitle>
       <PreviewListContainer>
         <PreviewList>
-          {previewImageUrl.slice(0, 10).map((src) => {
+          {previewImageUrlList.slice(0, 10).map((src) => {
             return (
               <>
                 <PreviewItem

@@ -3,7 +3,7 @@ const request = {
   movieUpcoming: "movie/upcoming",
   moviePopular: "movie/popular",
   movieTopRated: "movie/top_rated",
-  actionMovies: "/discover/movie?with_genres=28",
+  movieAction: "/discover/movie?with_genres=28",
 };
 
 export default request;

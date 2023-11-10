@@ -3,9 +3,9 @@ import styled from "styled-components";
 import MyListLogo from "public/assets/images/icon/my-list.svg";
 import PlayLogo from "public/assets/images/icon/play.svg";
 import InfoLogo from "public/assets/images/icon/info.svg";
-import { useFetchUpcomingData } from "@/hooks/useFetchData";
+import { useFetchData } from "@/hooks/useFetchData";
 export function MainContent() {
-  const mainImageUrlList = useFetchUpcomingData("fetchMovieNowPlaying");
+  const mainImageUrlList = useFetchData("movieNowPlaying");
   const randomMainImageUrl =
     mainImageUrlList[Math.floor(Math.random() * mainImageUrlList.length)];
   return (
