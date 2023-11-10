@@ -3,30 +3,18 @@ import styled from "styled-components";
 import MyListLogo from "public/assets/images/icon/my-list.svg";
 import PlayLogo from "public/assets/images/icon/play.svg";
 import InfoLogo from "public/assets/images/icon/info.svg";
-import axios from "@/api/axios";
-import request from "@/api/request";
-import { useState } from "react";
+import { useFetchUpcomingData } from "@/hooks/useFetchData";
 export function MainContent() {
-  const [mainImgSrc, setMainImgSrc] = useState();
-  const fetchData = async () => {
-    try {
-      const res = await axios.get(request.fetchMovieNowPlaying);
-      setMainImgSrc(
-        res.data.results[Math.floor(Math.random() * res.data.results.length)]
-          .backdrop_path
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const mainImageUrlList = useFetchUpcomingData("fetchMovieNowPlaying");
+  const randomMainImageUrl =
+    mainImageUrlList[Math.floor(Math.random() * mainImageUrlList.length)];
   return (
     <MainSection>
       <RandomImageBox>
-        {mainImgSrc ? (
-          <RandomImg src={`https://image.tmdb.org/t/p/original${mainImgSrc}`} />
+        {randomMainImageUrl ? (
+          <RandomImg
+            src={`https://image.tmdb.org/t/p/original${randomMainImageUrl}`}
+          />
         ) : (
           <EmptyImage />
         )}

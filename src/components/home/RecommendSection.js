@@ -1,12 +1,14 @@
+import { useFetchUpcomingData } from "@/hooks/useFetchData";
 import styled from "styled-components";
 
-export function RecommendSection({ title, recommendSrc }) {
+export function RecommendSection({ title, type }) {
+  const recommendImageUrlList = useFetchUpcomingData(type);
   return (
     <RecommendSectionWrapper>
       <RecommendTitle>{title}</RecommendTitle>
       <RecommendListContainer>
         <RecommendList>
-          {recommendSrc.slice(0, 10).map((src) => {
+          {recommendImageUrlList.slice(0, 10).map((src) => {
             return (
               <>
                 <RecommendItem

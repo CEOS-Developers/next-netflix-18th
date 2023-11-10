@@ -2,26 +2,15 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import request from "@/api/request";
 import axios from "@/api/axios";
+import { useFetchUpcomingData } from "@/hooks/useFetchData";
 export function PreviewSection() {
-  const [previewSrc, setPreviewSrc] = useState([]);
-  const fetchData = async () => {
-    try {
-      const res = await axios.get(request.fetchUpcoming);
-      const paths = res.data.results.map((value) => value.backdrop_path);
-      setPreviewSrc(paths);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const previewImageUrl = useFetchUpcomingData("fetchMovieNowPlaying");
   return (
     <PreviewSectionWrapper>
       <PrevewTitle>Previews</PrevewTitle>
       <PreviewListContainer>
         <PreviewList>
-          {previewSrc.slice(0, 10).map((src) => {
+          {previewImageUrl.slice(0, 10).map((src) => {
             return (
               <>
                 <PreviewItem
