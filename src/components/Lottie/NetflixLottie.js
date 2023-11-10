@@ -16,7 +16,7 @@ const NetflixLottie = () => {
   }, []);
   return (
     <LottieWrapper>
-      <Lottie loop animationData={lottieJson} play style={{ width: "500px" }} />
+      <Lottie loop animationData={lottieJson} play style={{ width: "375px" }} />
     </LottieWrapper>
   );
 };
