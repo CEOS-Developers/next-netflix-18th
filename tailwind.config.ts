@@ -16,10 +16,14 @@ const config: Config = {
       spacing: {
         "25": "1.6rem",
       },
+      colors: {
+        "custom-white": "rgba(255,255,255,0.83)",
+      },
       fontSize: {
         header: "1.1rem",
         preview: "1.7rem",
         popular: "1.3rem",
+        explain: "0.7rem",
       },
     },
   },

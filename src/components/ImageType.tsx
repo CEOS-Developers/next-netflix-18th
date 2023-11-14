@@ -51,7 +51,7 @@ export const Previews = ({ imageUrl }: { imageUrl: string }) => {
   );
 };
 
-//홈화면 아래쪽에 보니는 image
+//홈화면 아래쪽에 보이는 image
 export const SquareImg = ({ imageUrl }: { imageUrl: string }) => {
   return (
     <div
