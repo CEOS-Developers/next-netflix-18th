@@ -1,11 +1,14 @@
 import { SquareImg, Previews, BackgroundImg } from "@/components/ImageType";
 import { useEffect, useState, useMemo } from "react";
 import { SquareForRankingIcon, Top10Icon } from "../../../public/svgs";
+import Link from "next/link";
 
 interface Movie {
   id: number;
   title: string;
   poster_path: string;
+  backdrop_path: string;
+  overview: string;
 }
 
 //페이지의 가장 위쪽에 랜덤으로 함수를 보여주는 함수
@@ -32,7 +35,14 @@ export const RandomMovie = ({ movies }: { movies: Movie[] }) => {
 
   return movie ? (
     <div className="flex flex-col items-center justify-center w-[100%]">
-      <BackgroundImg imageUrl={getImageUrl(movie.poster_path)} />
+      <Link
+        href={{
+          pathname: `/movie-detail/${movie.id}`,
+          query: { path: movie.backdrop_path, overview: movie.overview },
+        }}
+      >
+        <BackgroundImg imageUrl={getImageUrl(movie.poster_path)} />
+      </Link>
       <span className="flex align-center mt-2 md-2">
         <div className="relative mr-2">
           <SquareForRankingIcon />
@@ -50,7 +60,14 @@ export const RandomMovie = ({ movies }: { movies: Movie[] }) => {
 export const renderRoundMovies = (movies: Movie[]) => {
   return movies.map((movie) => (
     <div key={movie.id}>
-      <Previews imageUrl={getImageUrl(movie.poster_path)} />
+      <Link
+        href={{
+          pathname: `/movie-detail/${movie.id}`,
+          query: { path: movie.backdrop_path, overview: movie.overview },
+        }}
+      >
+        <Previews imageUrl={getImageUrl(movie.poster_path)} />
+      </Link>
     </div>
   ));
 };
@@ -59,7 +76,14 @@ export const renderRoundMovies = (movies: Movie[]) => {
 export const renderBoxMovies = (movies: Movie[]) => {
   return movies.map((movie) => (
     <div key={movie.id}>
-      <SquareImg imageUrl={getImageUrl(movie.poster_path)} />
+      <Link
+        href={{
+          pathname: `/movie-detail/${movie.id}`,
+          query: { path: movie.backdrop_path, overview: movie.overview },
+        }}
+      >
+        <SquareImg imageUrl={getImageUrl(movie.poster_path)} />
+      </Link>
     </div>
   ));
 };
