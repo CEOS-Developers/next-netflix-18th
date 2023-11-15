@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useFetchData } from "@/hooks/useFetchData";
-export function PreviewSection() {
-  const previewImageUrlList = useFetchData("movieUpcoming");
+export async function PreviewSection() {
+  const previewImageUrlList = await useFetchData("movieUpcoming");
   return (
     <PreviewSectionWrapper>
       <PrevewTitle>Previews</PrevewTitle>
@@ -13,6 +13,7 @@ export function PreviewSection() {
               <>
                 <PreviewItem
                   src={"https://image.tmdb.org/t/p/original" + src}
+                  key={src}
                 />
               </>
             );

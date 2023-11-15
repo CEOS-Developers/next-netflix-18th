@@ -1,8 +1,8 @@
 import { useFetchData } from "@/hooks/useFetchData";
 import styled from "styled-components";
 
-export function RecommendSection({ title, type }) {
-  const recommendImageUrlList = useFetchData(type);
+export async function RecommendSection({ title, type }) {
+  const recommendImageUrlList = await useFetchData(type);
   return (
     <RecommendSectionWrapper>
       <RecommendTitle>{title}</RecommendTitle>
@@ -13,6 +13,7 @@ export function RecommendSection({ title, type }) {
               <>
                 <RecommendItem
                   src={"https://image.tmdb.org/t/p/original" + src}
+                  key={src}
                 />
               </>
             );

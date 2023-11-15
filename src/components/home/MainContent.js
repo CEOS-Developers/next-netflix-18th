@@ -5,8 +5,8 @@ import PlayLogo from "public/assets/images/icon/play.svg";
 import InfoLogo from "public/assets/images/icon/info.svg";
 import Top10Logo from "public/assets/images/icon/top-10.svg";
 import { useFetchData } from "@/hooks/useFetchData";
-export function MainContent() {
-  const mainImageUrlList = useFetchData("movieNowPlaying");
+export async function MainContent() {
+  const mainImageUrlList = await useFetchData("movieNowPlaying");
   const randomMainImageUrl =
     mainImageUrlList[Math.floor(Math.random() * mainImageUrlList.length)];
   return (
