@@ -66,3 +66,17 @@ export const SquareImg = ({ imageUrl }: { imageUrl: string }) => {
     </div>
   );
 };
+
+//search화면에 보이는 영화 리스트 아이템
+export const SearchMovieImg = ({ imageUrl }: { imageUrl: string }) => {
+  return (
+    <div style={{ width: "9.125rem", height: "4.75rem", position: "relative" }}>
+      <Image
+        src={imageUrl}
+        alt="popularimage"
+        layout="fill"
+        objectFit="cover"
+      />
+    </div>
+  );
+};
