@@ -7,28 +7,31 @@ import DownloadLogo from "public/assets/images/icon/downloads.svg";
 import MoreLogo from "public/assets/images/icon/more.svg";
 import indicator from "public/assets/images/indicator.png";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 function BottomNavigation() {
+  const router = useRouter();
   return (
     <>
       <BottomNavigationWrapper>
         <MenuList>
-          <MenuItem $padding={"8px"}>
+          <MenuItem $padding={"8px"} onClick={() => router.push("/home")}>
             <HomeLogo stroke={"#FFF"} />
             <MenuText $color={"#FFF"}>Home</MenuText>
           </MenuItem>
-          <MenuItem $padding={"8px"}>
+          <MenuItem $padding={"8px"} onClick={() => router.push("/search")}>
             <SearchLogo stroke={"#8C8787"} />
             <MenuText>Search</MenuText>
           </MenuItem>
-          <MenuItem $padding={"10px"}>
+          <MenuItem $padding={"10px"} onClick={() => router.push("/")}>
             <CommingLogo fill={"#8C8787"} />
             <MenuText>Coming Soon</MenuText>
           </MenuItem>
-          <MenuItem $padding={"8px"}>
+          <MenuItem $padding={"8px"} onClick={() => router.push("/")}>
             <DownloadLogo fill={"#8C8787"} />
             <MenuText>Downloads</MenuText>
           </MenuItem>
-          <MenuItem $padding={"11px"}>
+          <MenuItem $padding={"11px"} onClick={() => router.push("/")}>
             <MoreLogo fill={"#8C8787"} />
             <MenuText>More</MenuText>
           </MenuItem>

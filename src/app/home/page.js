@@ -1,3 +1,4 @@
+"use client";
 import BottomNavigation from "@/components/Common/BottomNavigation";
 import {
   MainContent,

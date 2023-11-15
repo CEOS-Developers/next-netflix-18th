@@ -1,14 +1,3 @@
-import styled from "styled-components";
 export default function Search() {
-  return (
-    <div>
-      <SearchWrapper />
-    </div>
-  );
+  return <div>스타일드 컴포넌트로 이미 해버렸는데 SSR 구현어케하노 ㅋㅋ</div>;
 }
-
-const SearchWrapper = styled.div`
-  width: 100px;
-  height: 200px;
-  background-color: orange;
-`;
