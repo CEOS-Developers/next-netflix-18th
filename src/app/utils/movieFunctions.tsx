@@ -1,6 +1,15 @@
-import { SquareImg, Previews, BackgroundImg } from "@/components/ImageType";
+import {
+  SquareImg,
+  Previews,
+  BackgroundImg,
+  SearchMovieImg,
+} from "@/components/ImageType";
 import { useEffect, useState, useMemo } from "react";
-import { SquareForRankingIcon, Top10Icon } from "../../../public/svgs";
+import {
+  SquareForRankingIcon,
+  Top10Icon,
+  PlayCircleIcon,
+} from "../../../public/svgs";
 import Link from "next/link";
 
 interface Movie {
@@ -91,4 +100,26 @@ export const renderBoxMovies = (movies: Movie[]) => {
 //영화 포스터 이미지 가져오는 함수
 export const getImageUrl = (posterPath: string) => {
   return `https://image.tmdb.org/t/p/w500${posterPath}`;
+};
+
+//search 페이지에 사용될 함수
+export const renderMovieLists = (movies: Movie[]) => {
+  return movies.map((movie) => (
+    <div key={movie.id}>
+      <Link
+        href={{
+          pathname: `/movie-detail/${movie.id}`,
+          query: { path: movie.backdrop_path, overview: movie.overview },
+        }}
+      >
+        <div className="flex flex-row items-center justify-between bg-[#424242] w-[375px] h-[76px] mb-[0.2rem] relative">
+          <SearchMovieImg imageUrl={getImageUrl(movie.poster_path)} />
+          <span className="text-start	w-[160px] text-white text-sm font-normal">
+            {movie.title}
+          </span>
+          <PlayCircleIcon className="mr-[0.75rem]" />
+        </div>
+      </Link>
+    </div>
+  ));
 };

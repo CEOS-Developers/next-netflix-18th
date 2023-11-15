@@ -10,6 +10,7 @@ import PlusIcon from "./plusIcon.svg";
 import Top10Icon from "./top10Icon.svg";
 import SearchIcon2 from "./searchIcon2.svg";
 import XIcon from "./xIcon.svg";
+import PlayCircleIcon from "./playCircleIcon.svg";
 import SquareForRankingIcon from "./squareForRanking.svg";
 export {
   HomeIcon,
@@ -25,4 +26,5 @@ export {
   SquareForRankingIcon,
   SearchIcon2,
   XIcon,
+  PlayCircleIcon,
 };
