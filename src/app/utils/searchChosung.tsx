@@ -1,3 +1,4 @@
+//한글 검색시 초성검색도 허용
 const CHO_HANGUL: string[] = [
   "ㄱ",
   "ㄲ",

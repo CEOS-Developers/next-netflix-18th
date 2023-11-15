@@ -22,6 +22,9 @@ function Search({}: Props) {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
+  const handleClearSearch = () => {
+    setSearchQuery("");
+  };
 
   const filteredMovies = topRated.filter((movie) =>
     includesChosung(movie.title, searchQuery),
@@ -46,6 +49,7 @@ function Search({}: Props) {
       <SearchBar
         searchQuery={searchQuery}
         onSearchChange={handleSearchChange}
+        onClearSearch={handleClearSearch}
       />
 
       <h3 className="pl-[0.63rem] pt-[117px] text-start text-white text-preview font-bold mb-[1.3rem] w-[375px]">
