@@ -106,20 +106,20 @@ export const getImageUrl = (posterPath: string) => {
 export const renderMovieLists = (movies: Movie[]) => {
   return movies.map((movie) => (
     <div key={movie.id}>
-      <Link
-        href={{
-          pathname: `/movie-detail/${movie.id}`,
-          query: { path: movie.backdrop_path, overview: movie.overview },
-        }}
-      >
-        <div className="flex flex-row items-center justify-between bg-[#424242] w-[375px] h-[76px] mb-[0.2rem] relative">
-          <SearchMovieImg imageUrl={getImageUrl(movie.poster_path)} />
-          <span className="text-start	w-[160px] text-white text-sm font-normal">
-            {movie.title}
-          </span>
+      <div className="flex flex-row items-center justify-between bg-[#424242] w-[375px] h-[76px] mb-[0.2rem] relative">
+        <SearchMovieImg imageUrl={getImageUrl(movie.poster_path)} />
+        <span className="text-start	w-[160px] text-white text-sm font-normal">
+          {movie.title}
+        </span>
+        <Link
+          href={{
+            pathname: `/movie-detail/${movie.id}`,
+            query: { path: movie.backdrop_path, overview: movie.overview },
+          }}
+        >
           <PlayCircleIcon className="mr-[0.75rem]" />
-        </div>
-      </Link>
+        </Link>
+      </div>
     </div>
   ));
 };
