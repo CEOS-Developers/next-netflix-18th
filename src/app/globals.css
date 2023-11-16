@@ -13,6 +13,7 @@ body {
   display: none;
 }
 ul,
+h1,
 li,
 input {
   padding: 0;
@@ -23,6 +24,9 @@ li {
 }
 .mainContainer {
   width: 375px;
+}
+button {
+  all: unset;
 }
 /* 피그마 디자인 참조하여 사용할 폰트 assets/fonts에서 Import */
 @font-face {
