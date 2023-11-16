@@ -1,12 +1,17 @@
 .imageBox {
-  position: relative;
   height: 415px;
   width: 375px;
-  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0) 87.26%,
+    #000 100%
+  );
 }
 .image {
   object-fit: cover;
   position: relative;
+  z-index: -1;
 }
 
 .buttonWrapper {

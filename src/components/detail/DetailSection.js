@@ -4,7 +4,7 @@ import styles from "./DetailSection.module.css";
 import PlayLogo from "public/assets/images/icon/play.svg";
 function DetailSection({ data, imageUrl }) {
   return (
-    <section className="preview">
+    <section>
       <div className={styles.imageBox}>
         <Image
           src={imageUrl + "/" + data.backdrop_path}
@@ -21,9 +21,7 @@ function DetailSection({ data, imageUrl }) {
       </div>
       <div className={styles.previewContent}>
         <h1 className={styles.previewTitle}>Previews</h1>
-        <div className={styles.previewText}>
-          {data.overview}
-        </div>
+        <div className={styles.previewText}>{data.overview}</div>
       </div>
     </section>
   );
