@@ -7,7 +7,6 @@ import DownloadLogo from "public/assets/images/icon/downloads.svg";
 import MoreLogo from "public/assets/images/icon/more.svg";
 import indicator from "public/assets/images/indicator.png";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./BottomNav.module.css";
 import { usePathname, useRouter } from "next/navigation";
 function BottomNav() {
