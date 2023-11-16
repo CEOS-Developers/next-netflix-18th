@@ -35,6 +35,7 @@ function Search() {
 
   useEffect(() => {
     if (searchQuery === "") {
+      setTopRated([]);
       setCurrentPage(1);
       setHasMore(true);
       fetchMoviesFromPage(1).then((newMovies) => {
