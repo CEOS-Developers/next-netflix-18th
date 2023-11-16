@@ -6,15 +6,15 @@ import InfoLogo from "public/assets/images/icon/info.svg";
 import Top10Logo from "public/assets/images/icon/top-10.svg";
 import { useFetchData } from "@/hooks/useFetchData";
 export async function MainContent() {
-  const mainImageUrlList = await useFetchData("movieNowPlaying");
-  const randomMainImageUrl =
-    mainImageUrlList[Math.floor(Math.random() * mainImageUrlList.length)];
+  const mainImageData = await useFetchData("movieNowPlaying");
+  const randomMainImageData =
+    mainImageData[Math.floor(Math.random() * mainImageData.length)];
   return (
     <MainSection>
       <RandomImageBox>
-        {randomMainImageUrl ? (
+        {randomMainImageData ? (
           <RandomImg
-            src={`https://image.tmdb.org/t/p/original${randomMainImageUrl}`}
+            src={`https://image.tmdb.org/t/p/original${randomMainImageData.backdrop_path}`}
           />
         ) : (
           <EmptyImage />

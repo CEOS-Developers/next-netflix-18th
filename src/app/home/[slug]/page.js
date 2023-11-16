@@ -1,6 +1,6 @@
 import React from "react";
-function page() {
-  return <div style={{ color: "red" }}>으아아ㅏ아아악</div>;
+function page({ params }) {
+  return <div style={{ color: "red" }}>{params.slug}</div>;
 }
 
 export default page;
