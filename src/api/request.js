@@ -5,6 +5,7 @@ const request = {
   moviePopular: "movie/popular",
   movieTopRated: "movie/top_rated",
   movieAction: "/discover/movie?with_genres=28",
+  movieDetail: "movie",
 };
 
 export default request;

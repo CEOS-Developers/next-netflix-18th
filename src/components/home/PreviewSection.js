@@ -1,20 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { useFetchData } from "@/hooks/useFetchData";
-export function PreviewSection() {
-  const previewImageUrlList = useFetchData("movieUpcoming");
+import Link from "next/link";
+export async function PreviewSection() {
+  const previewDataList = await useFetchData("movieUpcoming");
   return (
     <PreviewSectionWrapper>
       <PrevewTitle>Previews</PrevewTitle>
       <PreviewListContainer>
         <PreviewList>
-          {previewImageUrlList.slice(0, 10).map((src) => {
+          {previewDataList.slice(0, 10).map((item) => {
             return (
-              <>
+              <Link href={`/home/${item.id}`} key={item.id}>
                 <PreviewItem
-                  src={"https://image.tmdb.org/t/p/original" + src}
+                  src={
+                    "https://image.tmdb.org/t/p/original" + item.backdrop_path
+                  }
                 />
-              </>
+              </Link>
             );
           })}
         </PreviewList>

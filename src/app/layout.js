@@ -1,4 +1,6 @@
+import BottomNav from "@/components/Common/BottomNav";
 import "./globals.css";
+
 export const metadata = {
   title: "Netflix",
 };
@@ -6,7 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className="mainContainer">{children}</body>
+      <body className="mainContainer">
+        {children}
+        <BottomNav />
+      </body>
     </html>
   );
 }

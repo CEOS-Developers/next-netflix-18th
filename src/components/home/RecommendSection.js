@@ -1,20 +1,22 @@
 import { useFetchData } from "@/hooks/useFetchData";
 import styled from "styled-components";
-
-export function RecommendSection({ title, type }) {
-  const recommendImageUrlList = useFetchData(type);
+import Link from "next/link";
+export async function RecommendSection({ title, type }) {
+  const recommendDataList = await useFetchData(type);
   return (
     <RecommendSectionWrapper>
       <RecommendTitle>{title}</RecommendTitle>
       <RecommendListContainer>
         <RecommendList>
-          {recommendImageUrlList.slice(0, 10).map((src) => {
+          {recommendDataList.slice(0, 10).map((item) => {
             return (
-              <>
+              <Link href={`/home/${item.id}`} key={item.id}>
                 <RecommendItem
-                  src={"https://image.tmdb.org/t/p/original" + src}
+                  src={
+                    "https://image.tmdb.org/t/p/original" + item.backdrop_path
+                  }
                 />
-              </>
+              </Link>
             );
           })}
         </RecommendList>

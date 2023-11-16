@@ -1,22 +1,19 @@
 import axios from "@/api/axios";
 import request from "@/api/request";
-import { useState, useEffect } from "react";
-export const useFetchData = (type) => {
-  const [imageUrlList, setImageUrlList] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(request[type]);
-        const paths = res.data.results.map((value) => value.backdrop_path);
-        setImageUrlList(paths);
-      } catch (err) {
-        console.log(err);
-        setImageUrlList([]);
-      }
-    };
+export const useFetchData = async (type) => {
+  try {
+    const res = await axios.get(request[type]);
+    return res.data.results;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-    fetchData();
-  }, []);
-
-  return imageUrlList;
+export const useFetchDetailData = async (id) => {
+  try {
+    const res = await axios.get(`${request.movieDetail}/${id}`);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
 };
