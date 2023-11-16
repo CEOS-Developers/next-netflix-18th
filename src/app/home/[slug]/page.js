@@ -3,7 +3,7 @@ import DetailSection from "@/components/detail/DetailSection";
 import { useFetchDetailData } from "@/hooks/useFetchData";
 
 import React from "react";
-async function page({ params }) {
+async function Page({ params }) {
   const data = await useFetchDetailData(params.slug);
   const imageUrl = "https://image.tmdb.org/t/p/original";
   return (
@@ -14,4 +14,4 @@ async function page({ params }) {
   );
 }
 
-export default page;
+export default Page;
