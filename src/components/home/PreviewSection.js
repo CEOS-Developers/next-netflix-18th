@@ -11,12 +11,11 @@ export async function PreviewSection() {
         <PreviewList>
           {previewDataList.slice(0, 10).map((item) => {
             return (
-              <Link href={`/home/${item.id}`}>
+              <Link href={`/home/${item.id}`} key={item.id}>
                 <PreviewItem
                   src={
                     "https://image.tmdb.org/t/p/original" + item.backdrop_path
                   }
-                  key={item.id}
                 />
               </Link>
             );
