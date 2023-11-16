@@ -9,10 +9,10 @@ export const useFetchData = async (type) => {
   }
 };
 
-export const useFectDetailData = async (id) => {
+export const useFetchDetailData = async (id) => {
   try {
-    const data = await axios.get(`${request[movieDetail]}/${id}`);
-    return data;
+    const res = await axios.get(`${request.movieDetail}/${id}`);
+    return res.data;
   } catch (err) {
     console.log(err);
   }

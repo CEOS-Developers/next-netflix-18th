@@ -9,6 +9,9 @@ const nextConfig = {
   },
   compiler: { styledComponents: true },
   reactStrictMode: false,
+  images: {
+    domains: ["image.tmdb.org"],
+  },
 };
 
 module.exports = nextConfig;
