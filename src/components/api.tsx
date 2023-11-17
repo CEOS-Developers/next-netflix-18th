@@ -5,7 +5,7 @@ const tmdbApi = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   params: {
     api_key: tmdb_api_key,
-    language: "ko-KR",
+    // language: "ko-KR",
   },
 });
 
