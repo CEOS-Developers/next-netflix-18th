@@ -1,7 +1,13 @@
 "use client";
-import NetflixLottie from "@/components/Lottie/NetflixLottie";
 import styled from "styled-components";
+import dynamic from "next/dynamic";
 export default function App() {
+  const NetflixLottie = dynamic(
+    () => import("@/components/Lottie/NetflixLottie"),
+    {
+      ssr: false,
+    }
+  );
   return (
     <LandingWrapper>
       <NetflixLottie />

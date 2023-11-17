@@ -8,7 +8,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 export async function MainContent() {
   const mainImageData = await useFetchData("movieNowPlaying");
   const randomMainImageData =
-    mainImageData?.[Math.floor(Math.random() * mainImageData.length)];
+    mainImageData[Math.floor(Math.random() * mainImageData.length)];
   return (
     <MainSection>
       <RandomImageBox>
