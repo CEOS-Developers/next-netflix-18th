@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  position: relative;
+}
+.searchInput {
+  height: 52px;
+  border: none;
+  outline: none;
+  background-color: #424242;
+  width: 85%;
+  padding-left: 15%;
+  color: white;
+  font-family: SF Pro Display;
+  font-size: 15.213px;
+  font-style: normal;
+}
+.searchInput::placeholder {
+  color: #c4c4c4;
+}
+.searchIcon {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+}
