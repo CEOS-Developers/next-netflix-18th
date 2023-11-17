@@ -17,10 +17,10 @@ const NetflixLottie = () => {
   return (
     <LottieWrapper>
       <Lottie
-        loop
         animationData={lottieJson}
         play
         style={{ width: "375px" }}
+        loop={false}
         onComplete={() => router.push("/home")}
       />
     </LottieWrapper>
